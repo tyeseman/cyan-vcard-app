@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft } from "lucide-react"
+import { useAuth } from "@/contexts/AuthContext"
 
 export default function SignupForm() {
   const [name, setName] = useState("")
@@ -16,8 +17,9 @@ export default function SignupForm() {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
   const router = useRouter()
+  const { signUp } = useAuth()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
 
@@ -31,8 +33,12 @@ export default function SignupForm() {
       return
     }
 
-    console.log("Signing up with:", { name, email, password })
-    router.push("/dashboard")
+    try {
+      await signUp(email, password)
+      router.push("/dashboard")
+    } catch (error) {
+      setError("Failed to create an account. Please try again.")
+    }
   }
 
   return (

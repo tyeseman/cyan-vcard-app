@@ -12,7 +12,7 @@ const getTextColor = (bgColor: string) => {
 
 export default function CardPreview({ cardData }: PreviewProps) {
   const [isShareModalOpen, setIsShareModalOpen] = useState(false)
-  const textColorClass = getTextColor(cardData.theme)
+  const textColorClass = getTextColor(cardData.theme || "defaultColor")
 
   const handleSaveContact = () => {
     const vCardData = generateVCard(cardData)

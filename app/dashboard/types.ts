@@ -1,25 +1,25 @@
-export interface CardData {
-  id: string
+export type CardData = {
+  userId: string
   cardName: string
   cardLayout: string
   name: string
-  pronouns: string
-  jobTitle: string
-  company: string
-  location: string
-  bio: string
-  profilePicture: string
-  coverPhoto: string
-  companyLogo: string
-  theme: string
-  phone: string
-  email: string
-  whatsapp: string
-  linkedin: string
-  instagram: string
-  facebook: string
-  website: string
-  address: string
+  pronouns?: string
+  jobTitle?: string
+  company?: string
+  location?: string
+  bio?: string
+  profilePicture?: string
+  coverPhoto?: string
+  companyLogo?: string
+  theme?: string
+  phone?: string
+  email?: string
+  whatsapp?: string
+  linkedin?: string
+  instagram?: string
+  facebook?: string
+  website?: string
+  address?: string
 }
 
 export interface SidebarItem {

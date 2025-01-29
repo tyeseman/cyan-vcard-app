@@ -10,8 +10,7 @@ import type { ShareModalProps } from "../types"
 export default function ShareModal({ isOpen, onClose, cardData }: ShareModalProps) {
   const [copied, setCopied] = useState(false)
 
-  // In a real app, this would be a proper URL to your vCard
-  const shareUrl = `https://example.com/vcard/${cardData.cardName}`
+  const shareUrl = `http://cyanvcard.com/vcard/${cardData.cardName}`
 
   const handleCopy = () => {
     navigator.clipboard.writeText(shareUrl)
@@ -36,7 +35,10 @@ export default function ShareModal({ isOpen, onClose, cardData }: ShareModalProp
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Share your vCard</DialogTitle>
-          <DialogDescription>Anyone with this link will be able to view your vCard.</DialogDescription>
+          <DialogDescription>
+            Anyone with this link will be able to view your vCard. You can also download the vCard file or share the QR
+            code.
+          </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col items-center space-y-4">
           <QRCodeSVG value={shareUrl} size={200} />

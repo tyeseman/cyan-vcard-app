@@ -14,8 +14,7 @@ interface ShareFileModalProps {
 export default function ShareFileModal({ isOpen, onClose, fileName }: ShareFileModalProps) {
   const [copied, setCopied] = useState(false)
 
-  // In a real app, this would be a proper URL to your shared file
-  const shareUrl = `https://example.com/shared-file/${encodeURIComponent(fileName)}`
+  const shareUrl = `http://cyanvcard.com/shared-file/${encodeURIComponent(fileName)}`
 
   const handleCopy = () => {
     navigator.clipboard.writeText(shareUrl)

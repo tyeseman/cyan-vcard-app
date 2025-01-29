@@ -25,11 +25,11 @@ export default function Home() {
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Cyan VCard",
-          url: "https://www.cyanvcard.com",
+          url: "http://cyanvcard.com",
           description: "Create, manage, and share your digital business cards with ease.",
           potentialAction: {
             "@type": "SearchAction",
-            target: "https://www.cyanvcard.com/search?q={search_term_string}",
+            target: "http://cyanvcard.com/search?q={search_term_string}",
             "query-input": "required name=search_term_string",
           },
         }}
